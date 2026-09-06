@@ -1,0 +1,5 @@
+#!/bin/sh
+# Strip Cursor attribution so it never lands on GitHub as a contributor.
+tmp="$1.tmp"
+grep -v -E '^Co-authored-by: Cursor( Agent)? <cursoragent@cursor\.com>$|^Made-with: Cursor$' "$1" > "$tmp" && mv "$tmp" "$1"
+exit 0
